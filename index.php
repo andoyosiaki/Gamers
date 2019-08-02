@@ -84,7 +84,7 @@ if(isset($post) && strlen($post) > 1 && mb_strlen($post) > 1){ //１文字だけ
             <input type="hidden" name="title" value="<?php echo $title; ?>">
             <input type="hidden" name="hardware" value="<?php echo $hardware; ?>">
             <input type="hidden" name="itemurl" value="<?php echo $itemUrl; ?>">
-            <input type="hidden" name="image" value="<?php echo $enc_img; ?>">
+            <input type="hidden" name="image" value="<?php echo img($url2); ?>">
             <button type="submit" class="btn btn-danger" >これを紹介する</button>
            </form>
           </div>

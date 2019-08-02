@@ -4,6 +4,7 @@ require_once(__DIR__.'/core/dbconect.php');
 require(__DIR__.'/functions/functions.php');
 ini_set('display_errors',1);
 
+
 if($_REQUEST['page']===$_SESSION['id']){
   $statment = $db->prepare('SELECT * FROM users INNER JOIN userinfo on userinfo.name = users.member WHERE users.member_id=? order by users.post_id desc');
   $statment->execute(array($_SESSION['id']));
@@ -49,7 +50,8 @@ if($_REQUEST['page']===$_SESSION['id']){
          <div class="sec1_item_author-box">
            <div class="article_itemimg-box">
              <div class="sec1_itemimg-box">
-                <?php require(__DIR__.'/functions/image.php'); ?>
+               <?php $imginfo = getimagesize('data:application/octet-stream;base64,' . $items['image']);
+                echo $image = '<img src="data:' . $imginfo['mime'] . ';base64,'.$items['image'].'">'; ?>
              </div>
            </div>
            <div class="sec1_aut_int-box">

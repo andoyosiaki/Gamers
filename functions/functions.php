@@ -1,6 +1,6 @@
 <?php
 //楽天デベロッパーid
-define('ACOUNT_ID',0);
+define('ACOUNT_ID',1083140160780730237);
 
 function h($s){
   return htmlspecialchars($s,ENT_QUOTES,'UTF-8');
@@ -49,4 +49,10 @@ function image($souce){
   $enc_img = base64_encode($img);
   $imginfo = getimagesize('data:application/octet-stream;base64,' . $enc_img);
   return  $images = '<img src="data:' . $imginfo['mime'] . ';base64,'.$enc_img.'">';
+}
+
+//index.php
+function img($souces){
+  $img = file_get_contents($souces);
+  return  $enc_img = base64_encode($img);
 }

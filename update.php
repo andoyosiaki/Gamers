@@ -44,7 +44,8 @@ if($_SESSION['id'] === $items['id']){
           <div class="sec1_item_author-box">
             <div class="article_itemimg-box">
               <div class="sec1_itemimg-box">
-                  <?php require(__DIR__.'/functions/image.php'); ?>
+                <?php $imginfo = getimagesize('data:application/octet-stream;base64,' . $items['image']);
+                 echo $image = '<img src="data:' . $imginfo['mime'] . ';base64,'.$items['image'].'">'; ?>
               </div>
             </div>
             <div class="sec1_aut_int-box">
