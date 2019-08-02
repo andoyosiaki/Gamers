@@ -1,0 +1,438 @@
+body {
+  font-family: 'Arial','verdana',sans-serif;
+}
+
+.attention {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+  background-color: gray;
+  border-radius: 15px;
+  color: white;
+}
+
+pre {
+  font-size: 15px;
+  margin: 0;
+}
+pre p {
+  font-family: 'Noto Serif JP', serif;
+}
+
+/*------------------------*/
+/*header*/
+/*------------------------*/
+.section0 {
+  max-width: 100%;
+  height: 580px;
+  background-image: url(../img/4.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section0 .section_title-box {
+  color: #fff;
+  max-width: 100%;
+}
+.section0 .section_title-box .section0_title {
+  max-width: 100%;
+  font-size: 80px;
+  text-align: center;
+}
+
+.section0_btn-box {
+  margin-bottom: 50px;
+}
+
+/*------------------------*/
+/*section1*/
+/*------------------------*/
+.section1 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section1 .sec1_wrap-box {
+  padding: 20px 15px 30px 20px;
+  border-bottom: 1px solid #555;
+}
+.section1 .sec1_wrap-box:last-child {
+  border: none;
+}
+.section1 .sec1_item-box .item_title {
+  display: inline-block;
+  margin-left: 60px;
+}
+.section1 .sec1_item-box .item_hard {
+  display: inline-block;
+  padding: 1px 3px;
+  border: 1px solid #555;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-right: 50px;
+  width: 100px;
+}
+.section1 .sec1_item_author-box {
+  display: flex;
+}
+.section1 .sec1_item_author-box .article_itemimg-box .sec1_itemimg-box {
+  text-align: center;
+  overflow: scroll;
+}
+.section1 .sec1_item_author-box .sec1_member {
+  font-size: 14px;
+  width: 100%;
+  margin: 5px 0 0;
+  text-align: center;
+}
+.section1 .sec1_item_author-box .sec1_aut_int-box {
+  display: flex;
+  margin-left: 50px;
+}
+.section1 .sec1_item_author-box .sec1_aut_int-box .sec1_author-box {
+  position: relative;
+  top: 25px;
+}
+.section1 .sec1_item_author-box .sec1_aut_int-box .sec1_author-box .sec1_authorimg-box {
+  width: 100px;
+  height: 100px;
+}
+.section1 .sec1_item_author-box .sec1_aut_int-box .sec1_author-box .sec1_authorimg-box img {
+  width: 100%;
+  height: auto;
+}
+.section1 .sec1_item_author-box .sec1_aut_int-box .sec1_intro-box {
+  margin: 0 0 0 50px;
+  position: relative;
+  display: inline-block;
+  margin: 0.5em 0 auto 20px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+.section1 .sec1_item_author-box .sec1_aut_int-box .sec1_intro-box p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif JP', serif;
+}
+
+.item_detail {
+  margin: 15px 0 20px 30px;
+}
+
+/*------------------------*/
+/*register.php*/
+/*------------------------*/
+.login_form-box {
+  color: #fff;
+}
+
+.icon_box {
+  display: flex;
+}
+.icon_box .icon_men {
+  position: relative;
+}
+.icon_box .icon_men .icon_bt {
+  position: absolute;
+  left: 45%;
+  bottom: -15px;
+}
+
+/*------------------------*/
+/*index.php*/
+/*------------------------*/
+.section_title-box {
+  text-align: center;
+}
+
+.serch_form {
+  max-width: 100%;
+}
+.serch_form .form-group {
+  max-width: 100%;
+}
+.serch_form .form-group .form-control {
+  max-width: 100%;
+}
+
+.serch_section {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+.serch_section .serch_wrap-box {
+  margin: 30px 50px;
+  padding: 20px 15px;
+  border-bottom: 1px solid #555;
+}
+.serch_section .serch_wrap-box:last-child {
+  border: none;
+}
+.serch_section .serch_form-box {
+  margin: 30px;
+}
+
+/*------------------------*/
+/*new.php*/
+/*------------------------*/
+.new {
+  background-image: url(../img/new.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.insert_section {
+  max-width: 1280px;
+  margin: 50px auto;
+  text-align: center;
+}
+.insert_section p {
+  font-size: 32px;
+}
+.insert_section .insert_form-box {
+  margin-top: 20px;
+}
+.insert_section .form-group {
+  width: 50%;
+  margin: 0 auto;
+}
+.insert_section .insert_tbn-box {
+  margin-top: 15px;
+}
+
+/*------------------------*/
+/*login.php*/
+/*------------------------*/
+.login .section0 {
+  height: 100vh;
+  background-image: url(../img/login.jpg);
+  background-position: center;
+}
+.login .section0 .login_form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/*------------------------*/
+/*register.php*/
+/*------------------------*/
+.register {
+  background-image: url(../img/join.jpg);
+}
+.register .section0 {
+  background: none;
+  height: auto;
+  display: block;
+  text-align: center;
+}
+.register .section0 .section_title-box {
+  padding-top: 100px;
+  height: 280px;
+}
+.register .section0 .login_section {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.register .section0 .login_section .login_inpt-box {
+  width: 300px;
+  margin: 0 auto;
+}
+.register .section0 .login_section .icon_box {
+  margin: 0px 0 50px;
+  display: flex;
+}
+.register .section0 .login_section .icon_box .icon_men {
+  margin: 0 auto;
+  position: relative;
+}
+.register .section0 .login_section .icon_box .icon_men .icon_bt {
+  position: absolute;
+  left: 45%;
+  bottom: -15px;
+}
+
+/*------------------------*/
+/*mypage.php*/
+/*------------------------*/
+.update {
+  background-image: url(../img/update.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.update .insert_section {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.change_btn-box {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 0;
+}
+
+.delete_btn {
+  margin: 0 5px;
+}
+.delete_btn a {
+  padding: 2px 5px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background-color: red;
+  color: #fff;
+}
+
+.update_btn {
+  margin: 0 5px;
+}
+.update_btn a {
+  padding: 2px 5px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background-color: yellow;
+  color: #555;
+}
+
+/*------------------------*/
+/*delete.php*/
+/*------------------------*/
+.delete {
+  background-image: url(../img/delete.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.delete .section0 {
+  color: #555;
+  background-image: none;
+}
+
+/*------------------------*/
+/*paging*/
+/*------------------------*/
+.paging_box {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.paging_box a {
+  margin: 0 15px;
+  color: #555;
+}
+
+/*------------------------*/
+/*responsive*/
+/*------------------------*/
+@media (max-width: 992px) {
+  .item_title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .item_title {
+    display: block !important;
+    text-align: center;
+    margin-left: 0 !important;
+  }
+
+  .sec1_author-box {
+    margin-bottom: 20px;
+  }
+
+  .sec1_authorimg-box {
+    margin: 0 auto;
+  }
+
+  .sec1_aut_int-box {
+    display: block !important;
+  }
+
+  .item_detail {
+    text-align: center;
+    margin: 15px 0 0;
+  }
+
+  .attention {
+    font-size: 20px;
+  }
+
+  .insert_section .form-group {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .sec1_intro-box p {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .section0_title {
+    font-size: 28px;
+  }
+
+  .insert_section textarea {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .icon_men {
+    max-width: 100%;
+  }
+  .icon_men img {
+    height: 100px;
+    max-width: 100px;
+  }
+
+  .section1 .sec1_item_author-box {
+    display: block;
+  }
+  .section1 .sec1_item_author-box .sec1_aut_int-box {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .section0 {
+    background-image: url(../img/sp_section0.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .sec1_intro-box {
+    margin: 15px 0 0 0 !important;
+  }
+
+  .section0_btn-box .btn {
+    margin: 15px;
+  }
+
+  .section0_title {
+    font-size: 40px !important;
+  }
+
+  .icon_box {
+    flex-wrap: wrap;
+    margin: 10px 0 !important;
+  }
+  .icon_box .icon_men {
+    margin: 10px auto !important;
+  }
+
+  .login_form-box {
+    margin-bottom: 50px;
+  }
+
+  .register {
+    background-image: url(../img/ps_join.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  .register .section0 {
+    background: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
