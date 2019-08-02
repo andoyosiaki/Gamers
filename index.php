@@ -21,7 +21,7 @@ if(!empty($_POST['text'])){
 
 if(isset($post) && strlen($post) > 1 && mb_strlen($post) > 1){ //１文字だけを入力するとエラーが出るので除外
   if($post){
-  $url = file_get_contents("https://app.rakuten.co.jp/services/api/BooksGame/Search/20170404?format=json&title=".$post."&booksGenreId=006&applicationId=1083140160780730237");
+  $url = file_get_contents("https://app.rakuten.co.jp/services/api/BooksGame/Search/20170404?format=json&title=".$post."&booksGenreId=006&applicationId=".ACOUNT_ID."");
   $json = json_decode($url,true);
    $n = count($json['Items']); //最大値算出
  }
