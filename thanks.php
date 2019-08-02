@@ -1,6 +1,7 @@
 <?php
-require_once(__DIR__.'/core/dbconect.php');
 session_start();
+require_once(__DIR__.'/core/dbconect.php');
+
 ini_set('display_errors',1);
 
 if($_SESSION['join']){
@@ -11,7 +12,7 @@ if($_SESSION['join']){
     $_SESSION['join']['icon']
   ));
 
-header('Location:login.php');exit();
+  header('Location:login.php');exit();
 }else {
-header('Location:front.php');exit();
+  header('Location:front.php');exit();
 }

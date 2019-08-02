@@ -1,8 +1,7 @@
 <?php
-
+session_start();
 ini_set('display_errors',1);
 
-session_start();
 
 $_SESSION = array();
 if(ini_get("session.use_cookies")){

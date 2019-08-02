@@ -1,8 +1,9 @@
 <?php
-require_once(__DIR__.'/core/dbconect.php');
-require('functions/functions.php');
-ini_set('display_errors',1);
 session_start();
+require_once(__DIR__.'/core/dbconect.php');
+require(__DIR__.'/functions/functions.php');
+ini_set('display_errors',1);
+
 
 if(isset($_COKIE['name']) !=''){
   $_POST['name'] =$_COKIE['name'];

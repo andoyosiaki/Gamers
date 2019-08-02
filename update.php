@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once(__DIR__.'/core/dbconect.php');
-require('functions/functions.php');
+require(__DIR__.'/functions/functions.php');
 ini_set('display_errors',1);
 
 $statment = $db->prepare('SELECT * FROM users INNER JOIN userinfo on userinfo.name = users.member WHERE users.post_id=?');

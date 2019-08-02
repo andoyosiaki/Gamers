@@ -1,10 +1,5 @@
 <?php
 session_start();
-header('Expires:-1');
-header('Cache-Control:');
-header('Pragma:');
-ini_set('display_errors',1);
-
 
 if(isset($_POST['text']) && $_POST['text'] ===''){ //テキスト内容がポストされてるけどそれが空だった場合
    $error = 'error';
@@ -55,9 +50,9 @@ if(!$_SESSION['id']){
           <label for="exampleFormControlTextarea1"></label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="text" placeholder="このゲームの感想/紹介/オススメポイント/などをお書き下さい。"></textarea>
         </div>
-          <?php if(!empty($error)): ?>
+          <?php if(!empty($error)){ ?>
             <p class="attention">テキストを入力してください</p>
-          <?php endif; ?>
+          <?php endif;} ?>
         <div class="insert_tbn-box">
           <button type="submit" class="btn btn-primary">登録する</button>
         </div>

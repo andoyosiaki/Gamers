@@ -1,14 +1,8 @@
 <?php
-require_once(__DIR__.'/core/dbconect.php');
-// require(__DIR__.'/functions/sanitize.php');
-require('functions/functions.php');
-ini_set('display_errors',1);
-
 session_start();
-header('Expires:-1');
-header('Cache-Control:');
-header('Pragma:');
-
+require_once(__DIR__.'/core/dbconect.php');
+require(__DIR__.'/functions/functions.php');
+ini_set('display_errors',1);
 
 if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
 $_SESSION['time'] = time();

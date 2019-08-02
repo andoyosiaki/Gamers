@@ -1,8 +1,7 @@
 <?php
 session_start();
 require_once(__DIR__.'/core/dbconect.php');
-
-require('functions/functions.php');
+require(__DIR__.'/functions/functions.php');
 ini_set('display_errors',1);
 
 
@@ -32,7 +31,7 @@ $statment->execute();
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet"> 	<link rel="stylesheet" href="slick/slick.css">
  	<link rel="stylesheet" href="animate/animate.min.css">
  	<link href="css/main.css" rel="stylesheet">
-   	<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
  </head>
   <body>
     <header class="section0">

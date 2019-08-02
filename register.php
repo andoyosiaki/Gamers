@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once(__DIR__.'/core/dbconect.php');
-require('functions/functions.php');
+require(__DIR__.'/functions/functions.php');
 
 if(!empty($_POST)){
   if($_POST['name'] === ''){
