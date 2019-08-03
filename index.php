@@ -5,7 +5,7 @@ require(__DIR__.'/functions/functions.php');
 ini_set('display_errors',1);
 
 if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
-$_SESSION['time'] = time();
+  $_SESSION['time'] = time();
 
   $statment = $db->prepare('SELECT * FROM userinfo WHERE id=?');
   $statment->execute(array($_SESSION['id']));
@@ -23,9 +23,12 @@ if(isset($post) && strlen($post) > 1 && mb_strlen($post) > 1){ //１文字だけ
   if($post){
   $url = file_get_contents("https://app.rakuten.co.jp/services/api/BooksGame/Search/20170404?format=json&title=".$post."&booksGenreId=006&applicationId=".ACOUNT_ID."");
   $json = json_decode($url,true);
-   $n = count($json['Items']); //最大値算出
- }
-}else {
+   $n = count($json['Items']); //存在する商品の数
+  }
+}elseif(!isset($post)){
+  $nodata = 'firstcontact';
+}
+else {
   $nodata = 'nodata';
 }
 
@@ -63,11 +66,10 @@ if(isset($post) && strlen($post) > 1 && mb_strlen($post) > 1){ //１文字だけ
        </form>
      </div>
    </header>
-
   <div class="serch_section" >
-    <?php if(isset($post)===''): ?><p class="attention"><?php echo "検索フォームにゲームのタイトルを入力してください...。"; ?></p>
-    <?php elseif(isset($nodata) === 'nodata'): ?><p class="attention"><?php echo "商品がみつかりませんでした...。"; ?></p>
-    <?php elseif(empty($n)): ?><p class="attention"><?php echo "商品がみつかりませんでした...。"; ?></p>
+    <?php if(isset($nodata) && $nodata === 'firstcontact'): ?><p class="attention"><?php echo "検索フォームにゲームのタイトルを入力してください...。"; ?></p>
+    <?php elseif(isset($nodata) && $nodata === 'nodata'): ?><p class="attention"><?php echo "検索結果は０でした...。"; ?></p>
+    <?php elseif($n===0): ?><p class="attention"><?php echo "検索結果は０でした...。"; ?></p>
     <?php else: ?>
       <?php for ($i=0; $i < $n; $i++): ?>  <!-- 検索アイテムの数だけ表示。 -->
         <div class="serch_wrap-box">
