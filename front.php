@@ -16,23 +16,10 @@ $statment = $db->prepare('SELECT * FROM users INNER JOIN userinfo on userinfo.na
 $statment->bindParam(1,$count,PDO::PARAM_INT);
 $statment->execute();
 
- ?>
- <!-- <!DOCTYPE html> -->
- <html lang="ja">
- <head>
- 	<meta charset="utf-8">
- 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>Gamers</title>
- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
- 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet"> 	<link rel="stylesheet" href="slick/slick.css">
- 	<link rel="stylesheet" href="animate/animate.min.css">
- 	<link href="css/main.css" rel="stylesheet">
-  <script src="js/main.js"></script>
- </head>
+?>
+
+<?php require_once(__DIR__.'/head.php'); ?>
+
   <body>
     <header class="section0">
       <div class="section_title-box">
@@ -46,16 +33,14 @@ $statment->execute();
         </div>
       </div>
     </header>
+
     <article class="section1">
-
       <?php while($items = $statment->fetch()): ?>
-
         <div class="sec1_wrap-box">
           <div class="sec1_item-box">
             <p class="item_hard <?php echo $add; ?>"><?php echo $items['hardware']; ?></p>
             <h2 class="item_title"><?php echo $items['title']; ?></h2>
           </div>
-
           <div class="sec1_item_author-box">
             <div class="article_itemimg-box">
               <div class="sec1_itemimg-box">
@@ -82,23 +67,25 @@ $statment->execute();
           </div>
         </div>
       <?php endwhile; ?>
-
     </article>
-      <div class="paging_box">
-          <?php if($page >= 2): ?>
-              <a href="front.php?page=<?php echo ($page-1); ?>"><i class="fas fa-arrow-circle-left fa-4x"></i></a>
-          <?php endif; ?>
-          <?php $counts = $db->query('SELECT COUNT(*) as cnt FROM users');
-            $count= $counts->fetch();
-            $max_num = floor($count['cnt'] / 5) + 1;
-            if($page < $max_num):?>
-            <a href="front.php?page=<?php echo ($page+1); ?>"><i class="fas fa-arrow-circle-right fa-4x"></i></a>
-          <?php endif; ?>
-      </div>
-      <footer style="text-align:center;">
-       <!-- Rakuten Web Services Attribution Snippet FROM HERE -->
+
+    <div class="paging_box">
+        <?php if($page >= 2): ?>
+            <a href="front.php?page=<?php echo ($page-1); ?>"><i class="fas fa-arrow-circle-left fa-4x"></i></a>
+        <?php endif; ?>
+        <?php $counts = $db->query('SELECT COUNT(*) as cnt FROM users');
+          $count= $counts->fetch();
+          $max_num = floor($count['cnt'] / 5) + 1;
+          if($page < $max_num):?>
+          <a href="front.php?page=<?php echo ($page+1); ?>"><i class="fas fa-arrow-circle-right fa-4x"></i></a>
+        <?php endif; ?>
+    </div>
+
+    <footer style="text-align:center;">
+     <!-- Rakuten Web Services Attribution Snippet FROM HERE -->
       <a href="https://webservice.rakuten.co.jp/" target="_blank">Supported by Rakuten Developers</a>
-      <!-- Rakuten Web Services Attribution Snippet TO HERE -->
-      </footer>
+    <!-- Rakuten Web Services Attribution Snippet TO HERE -->
+    </footer>
+
   </body>
 </html>

@@ -38,24 +38,10 @@ if(isset($_POST['save']) === 'on'){
   setcookie('password',$_POST['password'],time()+60*60*24*14);
 }
 
-
  ?>
-<!-- <!DOCTYPE html> -->
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ログイン</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet"> 	<link rel="stylesheet" href="slick/slick.css">
-<link rel="stylesheet" href="animate/animate.min.css">
-<link href="css/main.css" rel="stylesheet">
-<script src="js/main.js"></script>
-</head>
+
+<?php require_once(__DIR__.'/head.php'); ?>
+
   <body class="login">
     <header class="section0">
       <div class="section_title-box">
@@ -75,8 +61,7 @@ if(isset($_POST['save']) === 'on'){
           <button type="submit" class="btn btn-primary">ログイン</button>
         </form>
         <div class="attention">
-
-        <p><?php if(isset($errors)){login($errors);} ?></p>
+          <p><?php if(isset($errors)){login($errors);} ?></p>
         </div>
       </div>
     </header>
