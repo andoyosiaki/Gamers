@@ -29,7 +29,7 @@ if(!empty($_POST)){
     }
   }
 
-  if(empty($error)){
+  if(is_null($error)){
   $_SESSION['join'] = $_POST;
    header('Location:thanks.php');exit();
   }
@@ -62,7 +62,7 @@ if(!empty($_POST)){
             <div class="attention">
               <p><?php if(isset($error['password'])){ echo Registerpassword($error['password']);} ?></p>
             </div>
-            
+
           </div>
 
           <label for="exampleInputEmail1">3:アイコンを選択してください</label>

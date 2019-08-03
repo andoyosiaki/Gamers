@@ -13,13 +13,11 @@ if(isset($_POST['text']) && $_POST['text'] === ''){
 if(isset($_POST['text']) && $_POST['text'] !=='' ){
   $_SESSION['text'] = $_POST['text'];
   header('Location: input.php');exit();
-  echo "1";
 }
 
 //ログインしてなかったらregisterに飛ばす
 if(!$_SESSION['id']){
   header('Location:register.php');exit();
-  echo "2";
 }
 
  ?>

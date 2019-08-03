@@ -13,6 +13,8 @@ if($_SESSION['join']){
   ));
 
   header('Location:login.php');exit();
+  echo "こお";
 }else {
   header('Location:front.php');exit();
+  echo "mこお";
 }

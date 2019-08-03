@@ -5,7 +5,7 @@ require(__DIR__.'/functions/functions.php');
 ini_set('display_errors',1);
 
 
-if(isset($_COKIE['name']) !=''){
+if(isset($_COKIE['name']) && $_COKIE['name'] !=''){
   $_POST['name'] =$_COKIE['name'];
   $_POST['password'] = $_COKIE['password'];
   $_POST['save'] = 'on';
