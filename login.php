@@ -56,7 +56,7 @@ if(isset($_POST['save']) === 'on'){
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">パスワード</label>
-            <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="パスワード" value="<?php if(isset($_SESSION['join']['password'])){ echo $_SESSION['join']['name'];} ?>">
+            <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="パスワード" value="<?php if(isset($_SESSION['join']['password'])){ echo $_SESSION['join']['password'];} ?>">
           </div>
           <button type="submit" class="btn btn-primary">ログイン</button>
         </form>
