@@ -12,7 +12,7 @@ if(isset($_REQUEST['page']) && is_numeric($_REQUEST['page'])){
 }
 
 $count = 5*($page - 1);
-$statment = $db->prepare('SELECT * FROM users INNER JOIN userinfo on userinfo.name=users.member order by users.post_id DESC LIMIT ?,5');
+$statment = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name=post.member order by post.post_id DESC LIMIT ?,5');
 $statment->bindParam(1,$count,PDO::PARAM_INT);
 $statment->execute();
 
@@ -38,7 +38,7 @@ $statment->execute();
       <?php while($items = $statment->fetch()): ?>
         <div class="sec1_wrap-box">
           <div class="sec1_item-box">
-            <p class="item_hard <?php echo $add; ?>"><?php echo $items['hardware']; ?></p>
+            <p class="item_hard"><?php echo $items['hardware']; ?></p>
             <h2 class="item_title"><?php echo $items['title']; ?></h2>
           </div>
           <div class="sec1_item_author-box">
@@ -73,7 +73,7 @@ $statment->execute();
         <?php if($page >= 2): ?>
             <a href="front.php?page=<?php echo ($page-1); ?>"><i class="fas fa-arrow-circle-left fa-4x"></i></a>
         <?php endif; ?>
-        <?php $counts = $db->query('SELECT COUNT(*) as cnt FROM users');
+        <?php $counts = $db->query('SELECT COUNT(*) as cnt FROM post');
           $count= $counts->fetch();
           $max_num = floor($count['cnt'] / 5) + 1;
           if($page < $max_num):?>
