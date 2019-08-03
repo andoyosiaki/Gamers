@@ -5,12 +5,12 @@ ini_set('display_errors',1);
 
 
 //テキストが空だったら'error'挿入
-if(empty($_POST['text']) && $_POST === ''){
+if(isset($_POST['text']) && $_POST['text'] === ''){
    $error = 'error';
 }
 
 //テキストの内容をセッションに保存
-if(isset($_POST['text'])){
+if(isset($_POST['text']) && $_POST['text'] !==''){
   $_SESSION['text'] = $_POST['text'];
   header('Location: input.php');exit();
 }
@@ -48,7 +48,7 @@ if(!$_SESSION['id']){
           <button type="submit" class="btn btn-primary">登録する</button>
         </div>
       </form>
-      
+
       <a href="index.php">
         <button type="submit" class="btn btn-warning">一覧へ戻る</button>
       </a>
