@@ -66,24 +66,21 @@ else {
             <p><?php echo  $title = $json['Items'][$i]['Item']['title']; ?></p>
             <p><?php echo  $hardware = $json['Items'][$i]['Item']['hardware']; ?></p>
             <div class="img_box">
-              <a href="<?php echo  $itemUrl = $json['Items'][$i]['Item']['itemUrl']; ?>">
-                <?php   $url2 = $json['Items'][$i]['Item']['largeImageUrl']; ?>
-                 <?php echo image($url2); ?>
-              </a>
+              <a href="<?php echo  $itemUrl = $json['Items'][$i]['Item']['itemUrl']; ?>"><?php echo image($json['Items'][$i]['Item']['largeImageUrl']); ?></a>
             </div>
             <div class="serch_form-box">
-             <form class="btn_box" action="next.php" method="post">
-              <input type="hidden" name="title" value="<?php echo $title; ?>">
-              <input type="hidden" name="hardware" value="<?php echo $hardware; ?>">
-              <input type="hidden" name="itemurl" value="<?php echo $itemUrl; ?>">
-              <input type="hidden" name="image" value="<?php echo img($url2); ?>">
-              <button type="submit" class="btn btn-danger" >これを紹介する</button>
-             </form>
+              <form class="btn_box" action="next.php" method="post">
+                <input type="hidden" name="title" value="<?php echo $title; ?>">
+                <input type="hidden" name="hardware" value="<?php echo $hardware; ?>">
+                <input type="hidden" name="itemurl" value="<?php echo $itemUrl; ?>">
+                <input type="hidden" name="image" value="<?php echo img($json['Items'][$i]['Item']['largeImageUrl']); ?>">
+                <button type="submit" class="btn btn-danger" >これを紹介する</button>
+              </form>
             </div>
-             </div>
+          </div>
         <?php endfor; ?>
       <?php endif; ?>
     </div>
-    
+
   </body>
 </html>
