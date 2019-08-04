@@ -1,6 +1,6 @@
 <?php
 //楽天デベロッパーid
-define('ACOUNT_ID',);
+define('ACOUNT_ID',1083140160780730237);
 
 function h($s){
   return htmlspecialchars($s,ENT_QUOTES,'UTF-8');
@@ -41,9 +41,9 @@ function title($title){
 
 // login.php
 function login($errors){
-  if($errors === 'blank'){
+  if($errors === 'nouser'){
   echo "登録されていません";
-  }elseif ($errors === 'none') {
+}elseif ($errors === 'blank') {
   echo "空欄があります";
   }
 }
