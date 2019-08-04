@@ -2,6 +2,7 @@
 session_start();
 require_once(__DIR__.'/core/dbconect.php');
 require(__DIR__.'/functions/functions.php');
+ini_set('display_errors',1);
 
 if(!empty($_POST)){
   if($_POST['name'] === ''){
