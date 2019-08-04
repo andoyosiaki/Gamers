@@ -68,9 +68,7 @@ if($_SESSION['id'] === $items['id']){
           <button type="submit" class="btn  bg-danger text-light">送信</button>
         </div>
         <div class="attention">
-
-          <p><?php if(isset($changed) && $changed === 'exist'){ echo '変更完了しました';} ?></p>
-          <p><?php if(isset($changed) && $changed === 'blank') {echo '変更内容を入力してください';}?></p>
+          <p><?php if(isset($changed)){ echo update($changed);} ?></p>
         </div>
         </form>
     </div>
