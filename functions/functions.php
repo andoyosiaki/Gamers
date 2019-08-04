@@ -83,3 +83,12 @@ function img($souces){
   $img = file_get_contents($souces);
   return  $enc_img = base64_encode($img);
 }
+
+//update.php
+function update($text){
+  if(isset($text) && $text === 'exist'){
+    echo "変更完了しました";
+  }elseif(isset($text) && $text === 'blank'){
+    echo '変更内容を入力してください';
+  }
+}
