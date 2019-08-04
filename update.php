@@ -4,16 +4,17 @@ require_once(__DIR__.'/core/dbconect.php');
 require(__DIR__.'/functions/functions.php');
 ini_set('display_errors',1);
 
-$statment = $db->prepare('SELECT * FROM users INNER JOIN userinfo on userinfo.name = users.member WHERE users.post_id=?');
+$statment = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name = post.member WHERE post.post_id=?');
 $statment->execute(array($_REQUEST['page']));
 $items = $statment->fetch();
 
-
 if($_SESSION['id'] === $items['id']){
   if(isset($_POST['text']) && $_POST['text'] != ''){
-    $statment = $db->prepare('UPDATE users SET texts=? WHERE post_id=?');
+    $statment = $db->prepare('UPDATE post SET texts=? WHERE post_id=?');
     $statment->execute(array($_POST['text'],$_REQUEST['page']));
-    $changed = "変更完了しました。";
+    $changed = "exist";
+  }elseif(isset($_POST['text']) && $_POST['text'] === '') {
+    $changed = 'blank';
   }
 }else {
   header('Location:front.php');exit();
@@ -56,18 +57,20 @@ if($_SESSION['id'] === $items['id']){
           </div>
         </div>
     </article>
-    
+
     <div class="insert_tbn-box text-center mb-5">
       <a href="mypage.php?page=<?php echo $_SESSION['id']; ?>"><button  class="btn  bg-warning text-light">マイページ</button></a>
     </div>
     <div class="insert_section">
         <form class="" action="update.php?page=<?php echo $items['post_id']; ?>" method="post">
-        <textarea name="text" rows="8" cols="80" placeholder="変更内容をお書き下さい"></textarea>
+        <textarea name="text" rows="8" cols="80" placeholder=""></textarea>
         <div class="insert_tbn-box">
           <button type="submit" class="btn  bg-danger text-light">送信</button>
         </div>
         <div class="attention">
-          <p><?php if(isset($changed)){ echo $changed;} ?></p>
+
+          <p><?php if(isset($changed) && $changed === 'exist'){ echo '変更完了しました';} ?></p>
+          <p><?php if(isset($changed) && $changed === 'blank') {echo '変更内容を入力してください';}?></p>
         </div>
         </form>
     </div>
