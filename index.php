@@ -33,6 +33,15 @@ else {
   $nodata = 'nodata';
 }
 
+if(isset($_POST['title'])){
+  $_SESSION['title'] = $_POST['title'];
+  $_SESSION['hardware'] = $_POST['hardware'];
+  $_SESSION['itemurl'] = $_POST['itemurl'];
+  $_SESSION['image'] = $_POST['image'];
+  header('Location:new.php');exit();
+}
+
+
  ?>
 
   <?php require_once(__DIR__.'/head.php'); ?>
@@ -69,7 +78,7 @@ else {
               <a href="<?php echo  $itemUrl = $json['Items'][$i]['Item']['itemUrl']; ?>"><?php echo image($json['Items'][$i]['Item']['largeImageUrl']); ?></a>
             </div>
             <div class="serch_form-box">
-              <form class="btn_box" action="next.php" method="post">
+              <form class="btn_box" action="" method="post">
                 <input type="hidden" name="title" value="<?php echo $title; ?>">
                 <input type="hidden" name="hardware" value="<?php echo $hardware; ?>">
                 <input type="hidden" name="itemurl" value="<?php echo $itemUrl; ?>">
