@@ -20,16 +20,16 @@ if(!empty($_POST)){
 		));
 		$me = $login->fetch();
 
-		if(isset($me)){
+		if($me){
       $_SESSION['id'] = $me['id'];
       $_SESSION['time'] = time();
       $_SESSION['name'] = $me['name'];
 			header('Location: index.php');exit();
 		}else {
-       $errors =  "blank";
+       $errors =  "nouser";
 		}
 	}else {
-    $errors = "none";
+    $errors = "blank";
   }
 }
 
