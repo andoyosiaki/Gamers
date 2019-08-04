@@ -1,21 +1,22 @@
 <?php
 session_start();
 require_once(__DIR__.'/core/dbconect.php');
+require(__DIR__.'/functions/functions.php');
 ini_set('display_errors',1);
 
 
 $id = $_REQUEST['id'];
 if(!empty($id)){
-  $statment = $db->prepare('SELECT * FROM users WHERE post_id=?');
+  $statment = $db->prepare('SELECT * FROM post WHERE post_id=?');
   $statment->execute(array($id));
   $member = $statment->fetch();
 }else {
-  header('Locationfront.php');
+  header('Location:front.php');
 }
 
 if(!empty($_SESSION['id']) && $_SESSION['id'] === $member['member_id']){
   if($id === $member['post_id']){
-    $del = $db->prepare('DELETE FROM users WHERE post_id=?');
+    $del = $db->prepare('DELETE FROM post WHERE post_id=?');
     $del->execute(array($id));
   }
   $delete = '投稿が削除されました';
