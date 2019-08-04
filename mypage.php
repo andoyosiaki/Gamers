@@ -6,7 +6,7 @@ ini_set('display_errors',1);
 
 
 if($_REQUEST['page']===$_SESSION['id']){
-  $statment = $db->prepare('SELECT * FROM users INNER JOIN userinfo on userinfo.name = users.member WHERE users.member_id=? order by users.post_id desc');
+  $statment = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name = post.member WHERE post.member_id=? order by post.post_id desc');
   $statment->execute(array($_SESSION['id']));
 }else {
   header('Location:front.php');
