@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once(__DIR__.'/core/dbconect.php');
-require(__DIR__.'/functions/functions.php');
-ini_set('display_errors',1);
+require_once __DIR__."/core/dbconect.php";
+require __DIR__."/functions/functions.php";
 
 
 $id = $_REQUEST['id'];
@@ -26,7 +25,7 @@ if(!empty($_SESSION['id']) && $_SESSION['id'] === $member['member_id']){
 
 ?>
 
-<?php require_once(__DIR__.'/head.php'); ?>
+<?php require_once __DIR__."/head.php"; ?>
 
   <body class="delete">
     <header class="section0">

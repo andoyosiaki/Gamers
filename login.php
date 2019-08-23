@@ -1,9 +1,7 @@
 <?php
 session_start();
-require_once(__DIR__.'/core/dbconect.php');
-require(__DIR__.'/functions/functions.php');
-ini_set('display_errors',1);
-
+require_once __DIR__."/core/dbconect.php";
+require __DIR__."/functions/functions.php";
 
 if(isset($_COKIE['name']) && $_COKIE['name'] !=''){
   $_POST['name'] =$_COKIE['name'];
@@ -40,7 +38,7 @@ if(isset($_POST['save']) === 'on'){
 
  ?>
 
-<?php require_once(__DIR__.'/head.php'); ?>
+<?php require_once __DIR__."/head.php"; ?>
 
   <body class="login">
     <header class="section0">

@@ -1,9 +1,7 @@
 <?php
 session_start();
-require_once(__DIR__.'/core/dbconect.php');
-require(__DIR__.'/functions/functions.php');
-ini_set('display_errors',1);
-
+require_once __DIR__."/core/dbconect.php";
+require __DIR__."/functions/functions.php";
 
 if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
   $_SESSION['time'] = time();
@@ -44,7 +42,7 @@ if(isset($_POST['title'])){
 
  ?>
 
-  <?php require_once(__DIR__.'/head.php'); ?>
+  <?php require_once __DIR__."/head.php"; ?>
 
    <body>
     <header class="section0">
@@ -64,29 +62,28 @@ if(isset($_POST['title'])){
        </form>
      </div>
     </header>
-
     <div class="serch_section" >
       <?php if(isset($nodata) && $nodata === 'firstcontact'): ?><p class="attention"><?php echo "検索フォームにゲームのタイトルを入力してください...。"; ?></p>
       <?php elseif(isset($nodata) && $nodata === 'nodata'): ?><p class="attention"><?php echo "検索結果は０でした...。"; ?></p>
       <?php elseif($n===0): ?><p class="attention"><?php echo "検索結果は０でした...。"; ?></p>
       <?php else: ?>
         <?php for ($i=0; $i < $n; $i++): ?>  <!-- 検索アイテムの数だけ表示。 -->
-          <div class="serch_wrap-box">
-            <p><?php echo  $title = $json['Items'][$i]['Item']['title']; ?></p>
-            <p><?php echo  $hardware = $json['Items'][$i]['Item']['hardware']; ?></p>
-            <div class="img_box">
-              <a href="<?php echo  $itemUrl = $json['Items'][$i]['Item']['itemUrl']; ?>"><?php echo image($json['Items'][$i]['Item']['largeImageUrl']); ?></a>
-            </div>
-            <div class="serch_form-box">
-              <form class="btn_box" action="" method="post">
-                <input type="hidden" name="title" value="<?php echo $title; ?>">
-                <input type="hidden" name="hardware" value="<?php echo $hardware; ?>">
-                <input type="hidden" name="itemurl" value="<?php echo $itemUrl; ?>">
-                <input type="hidden" name="image" value="<?php echo img($json['Items'][$i]['Item']['largeImageUrl']); ?>">
-                <button type="submit" class="btn btn-danger" >これを紹介する</button>
-              </form>
-            </div>
+        <div class="serch_wrap-box">
+          <p><?php echo  $title = $json['Items'][$i]['Item']['title']; ?></p>
+          <p><?php echo  $hardware = $json['Items'][$i]['Item']['hardware']; ?></p>
+          <div class="img_box">
+            <a href="<?php echo  $itemUrl = $json['Items'][$i]['Item']['itemUrl']; ?>"><?php echo image($json['Items'][$i]['Item']['largeImageUrl']); ?></a>
           </div>
+          <div class="serch_form-box">
+            <form class="btn_box" action="" method="post">
+              <input type="hidden" name="title" value="<?php echo $title; ?>">
+              <input type="hidden" name="hardware" value="<?php echo $hardware; ?>">
+              <input type="hidden" name="itemurl" value="<?php echo $itemUrl; ?>">
+              <input type="hidden" name="image" value="<?php echo img($json['Items'][$i]['Item']['largeImageUrl']); ?>">
+              <button type="submit" class="btn btn-danger" >これを紹介する</button>
+            </form>
+          </div>
+        </div>
         <?php endfor; ?>
       <?php endif; ?>
     </div>

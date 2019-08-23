@@ -1,9 +1,5 @@
 <?php
 session_start();
-ini_set('display_errors',1);
-
-
-$_SESSION = array();
 
 if(ini_get("session.use_cookies")){
   $params = session_get_cookie_params();
@@ -14,5 +10,4 @@ session_destroy();
 
 setcookie('name','',time()-3600);
 setcookie('password','',time()-3600);
-header('Location:front.php');
-exit();
+header('Location:front.php');exit();

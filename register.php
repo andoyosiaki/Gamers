@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once(__DIR__.'/core/dbconect.php');
-require(__DIR__.'/functions/functions.php');
-ini_set('display_errors',1);
+require_once __DIR__."/core/dbconect.php";
+require __DIR__."/functions/functions.php";
 
 if(!empty($_POST)){
   if($_POST['name'] === ''){
@@ -38,7 +37,7 @@ if(!empty($_POST)){
 
  ?>
 
-<?php require_once(__DIR__.'/head.php'); ?>
+<?php require_once __DIR__."/head.php"; ?>
 
   <body class="register">
     <header class="section0">
@@ -51,21 +50,17 @@ if(!empty($_POST)){
       <div class="login_section">
         <form class="login_form-box" action="" method="post">
           <div class="login_inpt-box">
-
             <label for="exampleInputEmail1">1:アカウント名は10文字以下の半角英数文字でお願いします。</label>
             <input type="text" class="form-control form-control-lg" name="name" placeholder="アカウント名">
             <div class="attention">
               <p><?php if(isset($error['name'])){ echo RegisterAcount($error['name']);} ?></p>
             </div>
-
             <label for="exampleInputEmail1">2:パスワード入力</label>
             <input type="password" class="form-control form-control-lg" name="password" placeholder="パスワード">
             <div class="attention">
               <p><?php if(isset($error['password'])){ echo Registerpassword($error['password']);} ?></p>
             </div>
-
           </div>
-
           <label for="exampleInputEmail1">3:アイコンを選択してください</label>
           <div class="icon_box">
             <div class="icon_men">

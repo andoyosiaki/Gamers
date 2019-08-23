@@ -1,6 +1,6 @@
 <?php
 //楽天デベロッパーid
-define('ACOUNT_ID',);
+define('ACOUNT_ID','');
 
 function h($s){
   return htmlspecialchars($s,ENT_QUOTES,'UTF-8');
