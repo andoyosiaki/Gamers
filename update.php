@@ -20,9 +20,7 @@ if($_SESSION['id'] === $items['id']){
 }
 
  ?>
-
 <?php require_once __DIR__."/head.php"; ?>
-
   <body class="update">
     <article class="section1">
       <div class="sec1_wrap-box">

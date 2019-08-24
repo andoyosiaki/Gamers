@@ -39,12 +39,9 @@ if(isset($_POST['title'])){
   header('Location:new.php');exit();
 }
 
-
  ?>
-
-  <?php require_once __DIR__."/head.php"; ?>
-
-   <body>
+<?php require_once __DIR__."/head.php"; ?>
+  <body>
     <header class="section0">
      <div class="section_title-box">
        <h1 class="section0_title">投稿画面</h1>
@@ -87,6 +84,5 @@ if(isset($_POST['title'])){
         <?php endfor; ?>
       <?php endif; ?>
     </div>
-
   </body>
 </html>

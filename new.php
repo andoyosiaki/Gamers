@@ -19,9 +19,7 @@ if(!$_SESSION['id']){
 }
 
  ?>
-
 <?php require_once __DIR__."/head.php"; ?>
-
   <body class="new">
     <div class="insert_section">
       <p><?php echo $_SESSION['title']; ?></p>

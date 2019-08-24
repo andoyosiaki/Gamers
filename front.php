@@ -16,9 +16,7 @@ $statment->bindParam(1,$count,PDO::PARAM_INT);
 $statment->execute();
 
 ?>
-
 <?php require_once __DIR__."/head.php"; ?>
-
   <body>
     <header class="section0">
       <div class="section_title-box">
@@ -80,7 +78,7 @@ $statment->execute();
     <footer style="text-align:center;">
      <!-- Rakuten Web Services Attribution Snippet FROM HERE -->
       <a href="https://webservice.rakuten.co.jp/" target="_blank">Supported by Rakuten Developers</a>
-    <!-- Rakuten Web Services Attribution Snippet TO HERE -->
+     <!-- Rakuten Web Services Attribution Snippet TO HERE -->
     </footer>
   </body>
 </html>

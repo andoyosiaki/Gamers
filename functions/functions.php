@@ -1,6 +1,6 @@
 <?php
 //楽天デベロッパーid
-define('ACOUNT_ID','');
+define('ACOUNT_ID',);
 
 function h($s){
   return htmlspecialchars($s,ENT_QUOTES,'UTF-8');
@@ -12,32 +12,6 @@ function special($text){
   return  $sb_text = nl2br($br_text);
 }
 
-function title($title){
-  $titles = str_replace(array('.php','/games/'),'',$title);
-  switch ($titles) {
-    case 'front':
-    echo  "Gamers";
-      break;
-    case 'index':
-    echo "投稿画面";
-      break;
-    case 'login':
-    echo   "ログイン画面";
-      break;
-    case 'register':
-    echo  "会員登録画面";
-      break;
-    case 'new':
-    echo  "インサート画面";
-      break;
-    case 'mypage':
-    echo "マイページ画面";
-      break;
-    case 'update';
-    echo "編集画面";
-      break;
-  }
-}
 
 // login.php
 function login($errors){

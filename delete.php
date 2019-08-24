@@ -24,9 +24,7 @@ if(!empty($_SESSION['id']) && $_SESSION['id'] === $member['member_id']){
 }
 
 ?>
-
 <?php require_once __DIR__."/head.php"; ?>
-
   <body class="delete">
     <header class="section0">
       <div class="section_title-box">

@@ -11,9 +11,7 @@ if($_REQUEST['page']===$_SESSION['id']){
 }
 
  ?>
-
 <?php require_once __DIR__."/head.php"; ?>
-
   <body>
    <header class="section0">
      <div class="section_title-box">
@@ -69,6 +67,5 @@ if($_REQUEST['page']===$_SESSION['id']){
      </div>
      <?php endwhile; ?>
    </article>
-
   </body>
 </HTML>
