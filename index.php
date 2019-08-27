@@ -6,9 +6,9 @@ require __DIR__."/functions/functions.php";
 if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
   $_SESSION['time'] = time();
 
-  $statment = $db->prepare('SELECT * FROM userinfo WHERE id=?');
-  $statment->execute(array($_SESSION['id']));
-  $member = $statment->fetch();
+  $statement = $db->prepare('SELECT * FROM userinfo WHERE id=?');
+  $statement->execute(array($_SESSION['id']));
+  $member = $statement->fetch();
 }else {
   header('Location:front.php');exit();
 }

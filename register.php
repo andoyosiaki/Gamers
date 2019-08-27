@@ -21,9 +21,9 @@ if(!empty($_POST)){
   }
 
   if(empty($error)){
-    $statment = $db->prepare('SELECT COUNT(*) AS cnt FROM userinfo WHERE name=?');
-    $statment->execute(array($_POST['name']));
-    $member = $statment->fetch();
+    $statement = $db->prepare('SELECT COUNT(*) AS cnt FROM userinfo WHERE name=?');
+    $statement->execute(array($_POST['name']));
+    $member = $statement->fetch();
     if($member['cnt'] > 0){
       $error['name'] = 'duplicate';
     }

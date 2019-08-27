@@ -4,8 +4,8 @@ require_once __DIR__."/core/dbconect.php";
 require __DIR__."/functions/functions.php";
 
 if($_REQUEST['page']===$_SESSION['id']){
-  $statment = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name = post.member WHERE post.member_id=? order by post.post_id desc');
-  $statment->execute(array($_SESSION['id']));
+  $statement = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name = post.member WHERE post.member_id=? order by post.post_id desc');
+  $statement->execute(array($_SESSION['id']));
 }else {
   header('Location:front.php');
 }
@@ -24,7 +24,7 @@ if($_REQUEST['page']===$_SESSION['id']){
      </div>
    </header>
    <article class="section1">
-     <?php while($items = $statment->fetch()): ?>
+     <?php while($items = $statement->fetch()): ?>
      <div class="sec1_wrap-box">
        <div class="sec1_item-box">
          <p class="item_hard"><?php echo $items['hardware']; ?></p>

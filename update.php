@@ -3,14 +3,14 @@ session_start();
 require_once __DIR__."/core/dbconect.php";
 require __DIR__."/functions/functions.php";
 
-$statment = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name = post.member WHERE post.post_id=?');
-$statment->execute(array($_REQUEST['page']));
-$items = $statment->fetch();
+$statement = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name = post.member WHERE post.post_id=?');
+$statement->execute(array($_REQUEST['page']));
+$items = $statement->fetch();
 
 if($_SESSION['id'] === $items['id']){
   if(isset($_POST['text']) && $_POST['text'] != ''){
-    $statment = $db->prepare('UPDATE post SET texts=? WHERE post_id=?');
-    $statment->execute(array($_POST['text'],$_REQUEST['page']));
+    $statement = $db->prepare('UPDATE post SET texts=? WHERE post_id=?');
+    $statement->execute(array($_POST['text'],$_REQUEST['page']));
     $changed = "exist";
   }elseif(isset($_POST['text']) && $_POST['text'] === '') {
     $changed = 'blank';

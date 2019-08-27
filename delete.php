@@ -6,9 +6,9 @@ require __DIR__."/functions/functions.php";
 
 $id = $_REQUEST['id'];
 if(!empty($id)){
-  $statment = $db->prepare('SELECT * FROM post WHERE post_id=?');
-  $statment->execute(array($id));
-  $member = $statment->fetch();
+  $statement = $db->prepare('SELECT * FROM post WHERE post_id=?');
+  $statement->execute(array($id));
+  $member = $statement->fetch();
 }else {
   header('Location:front.php');
 }

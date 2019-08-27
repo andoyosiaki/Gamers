@@ -11,9 +11,9 @@ if(isset($_REQUEST['page']) && is_numeric($_REQUEST['page'])){
 }
 
 $count = 5 * ($page - 1);
-$statment = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name=post.member order by post.post_id DESC LIMIT ?,5');
-$statment->bindParam(1,$count,PDO::PARAM_INT);
-$statment->execute();
+$statement = $db->prepare('SELECT * FROM post INNER JOIN userinfo on userinfo.name=post.member order by post.post_id DESC LIMIT ?,5');
+$statement->bindParam(1,$count,PDO::PARAM_INT);
+$statement->execute();
 
 ?>
 <?php require_once __DIR__."/head.php"; ?>
@@ -31,7 +31,7 @@ $statment->execute();
       </div>
     </header>
     <article class="section1">
-      <?php while($items = $statment->fetch()): ?>
+      <?php while($items = $statement->fetch()): ?>
       <div class="sec1_wrap-box">
         <div class="sec1_item-box">
           <p class="item_hard"><?php echo $items['hardware']; ?></p>
