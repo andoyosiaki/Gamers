@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__."/core/dbconect.php";
 require __DIR__."/functions/functions.php";
+ini_set('display_errors',1);
 
 if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
   $_SESSION['time'] = time();
@@ -15,7 +16,7 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
 
 //データ抽出
 if(!empty($_POST['text'])){
-  $post = str_replace(array(" ", "　"), "", $_POST['text']); //空白があるとエラーが出るので除外
+  $post = str_replace([" ", "　"], "", $_POST['text']); //空白があるとエラーが出るので除外
 }
 
 if(isset($post) && strlen($post) > 1 && mb_strlen($post) > 1){ //１文字だけを入力するとエラーが出るので除外
