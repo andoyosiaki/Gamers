@@ -8,6 +8,7 @@
 アプリ名
 ====
 **<a href="https://games.kagomeee.com/">Gamers</a>**
+<img src="https://user-images.githubusercontent.com/52596476/64943603-24337180-d8a7-11e9-95e5-10c40391f0fd.png" width="1000">
 
 ## 簡単な説明
 ゲームの会員制口コミサイトです。  
